@@ -1,0 +1,10 @@
+@mixin Jura {
+font-family: "Jura", "Arial", sans-serif;
+font-style: normal;
+font-weight: 500;
+}
+@mixin Jura-semi-bold {
+font-family: "Jura", "Arial", sans-serif;
+font-style: normal;
+font-weight: 600;
+}

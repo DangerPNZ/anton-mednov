@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  @include Jura;
+  background-image: url("../img/patterns/dust2x.png");
+  background-repeat: repeat;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+picture {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,112 @@
+.main-nav {
+  width: 100%;
+  background-color: #fff;
+}
+.main-nav__container {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 320px;
+  margin: 0 auto;
+}
+.main-nav__menu-btn {
+  display: flex;
+  position: relative;
+  margin: 15px auto 15px auto;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 0 7px 0 gray;
+  cursor: pointer;
+  .main-nav__menu-icon,
+  &--open .main-nav__menu-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: auto;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background-color: #000;
+      transition: top 0.25s, bottom 0.25s, transform 0.35s;
+    }
+    &::before {
+      top: 15px;
+    }
+    &::after {
+      bottom: 14px;
+    }
+  }
+  &--nojs .main-nav__menu-icon,
+  &--close .main-nav__menu-icon {
+    background-color: transparent;
+    &::before {
+      top: 22px;
+      transform: rotate(45deg);
+    }
+    &::after {
+      top: 22px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+.main-nav__menu {
+  width: 100%;
+  padding: 0 20px;
+  &--mobile-hidden {
+    display: none;
+  }
+  li {
+    display: flex;
+    justify-content: center;
+    @include Jura-semi-bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 0 white,
+    2px 2px 2px gray;
+    a {
+      position: relative;
+      padding-bottom: 3px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        width: 0%;
+        height: 1.5px;
+        background-color: red;
+        box-shadow: 3px 2px 2px 0 gray;
+        transition: width 0.15s, left 0.15s;
+      }
+      &:hover,
+      &:focus {
+        color: red;
+      }
+      &:hover::before,
+      &:focus::before {
+        width: 100%;
+        left: 0%;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .main-nav__menu-btn {
+    display: none;
+  }
+  .main-nav__menu,
+  &--mobile-hidden {
+    display: flex;
+    justify-content: space-around;
+    li {
+      margin-top: 15px;
+    }
+  }
+}
