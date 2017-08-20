@@ -6,10 +6,18 @@ body {
   background-image: url("../img/patterns/dust2x.png");
   background-repeat: repeat;
 }
+p,
 h1,
 h2,
 h3 {
   margin: 0;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+p {
+  margin-bottom: 15px;
 }
 li {
   list-style: none;

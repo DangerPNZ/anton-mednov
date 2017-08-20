@@ -413,6 +413,12 @@ template {
   padding: 0;
   border: 0; }
 
+.footnote {
+  color: #d95353;
+  font-size: 25px;
+  margin: 0 10px;
+  text-shadow: 0.3px 0.3px 0 white, 2px 2px 2px gray; }
+
 * {
   box-sizing: border-box; }
 
@@ -423,10 +429,17 @@ body {
   background-image: url("../img/patterns/dust2x.png");
   background-repeat: repeat; }
 
+p,
 h1,
 h2,
 h3 {
   margin: 0; }
+
+h2 {
+  margin-bottom: 10px; }
+
+p {
+  margin-bottom: 15px; }
 
 li {
   list-style: none; }
@@ -541,7 +554,9 @@ picture {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   min-width: 320px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  box-shadow: inset 0 4px 4px 0 #c0c0c0;
+  border-bottom: 1px solid #c0c0c0; }
 
 .main-nav__menu-btn {
   display: -ms-flexbox;
@@ -616,11 +631,11 @@ picture {
         bottom: 0px;
         width: 0%;
         height: 1.5px;
-        background-color: red;
+        background-color: #d95353;
         box-shadow: 3px 2px 2px 0 gray;
         transition: width 0.15s, left 0.15s; }
       .main-nav__menu li a:hover, .main-nav__menu li a:focus {
-        color: red; }
+        color: #d95353; }
       .main-nav__menu li a:hover::before, .main-nav__menu li a:focus::before {
         width: 100%;
         left: 0%; }
@@ -654,8 +669,8 @@ picture {
   .about-me__container p {
     line-height: 20px;
     margin-left: 10px; }
-    .about-me__container p:not(:first-of-type) {
-      margin-top: -5px; }
+    .about-me__container p:last-of-type {
+      margin-top: 17px; }
   .about-me__container ul {
     margin-bottom: 30px; }
   .about-me__container li {
@@ -665,8 +680,92 @@ picture {
       content: "";
       display: block;
       position: absolute;
-      top: 8px;
+      top: 7px;
       left: -30px;
       width: 20px;
-      height: 3px;
-      background-color: #d95353; }
+      height: 2px;
+      background-color: #d95353;
+      box-shadow: 0.5px 0.5px 0 0 white, 2px 2px 2px 1px #cecece; }
+
+.about-me__feedback {
+  position: relative;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 8px 55px 10px 20px;
+  margin: 0 0 20px 5px;
+  border: 1px solid #000;
+  border-radius: 10px; }
+  .about-me__feedback:hover, .about-me__feedback:focus {
+    box-shadow: inset 0 0 3px 3px #c7c7c7; }
+
+.technologies {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 100%;
+  background-image: inherit;
+  margin-top: -1px; }
+
+.technologies__container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+  margin: 0 auto 30px auto; }
+
+.technologies__method-item {
+  padding: 15px 15px 0 15px;
+  margin: 10px 0; }
+  .technologies__method-item:nth-child(2n) {
+    border-radius: 10px;
+    border: 1px solid gray; }
+  .technologies__method-item:nth-child(2n+1) {
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-image: linear-gradient(to right bottom, gray, #fff); }
+
+.technologies__item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 49%;
+  min-height: 150px;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background-image: linear-gradient(#ffdee4 0%, #f391a3 35%, #f0778d 50%, #f46883 51%, #c198a0 100%);
+  cursor: pointer; }
+  .technologies__item:hover, .technologies__item:focus {
+    background-image: linear-gradient(#ffdee4 0%, #f36c84 35%, #ed4261 50%, #ec3757 51%, #d9647a 100%);
+    box-shadow: 3px 3px 2px #a7a6a6; }
+  .technologies__item h3 {
+    text-align: center;
+    font-size: 15px; }
+  .technologies__item p,
+  .technologies__item .footnote {
+    display: none; }
+  .technologies__item--active {
+    width: 100%; }
+    .technologies__item--active h3 {
+      font-size: 20px; }
+    .technologies__item--active p,
+    .technologies__item--active .footnote {
+      display: block; }
+    .technologies__item--active p {
+      text-align: center; }
+
+@media (min-width: 768px) {
+  .technologies__item {
+    width: 33%; }
+    .technologies__item h3 {
+      font-size: 19px; } }
+
+@media (min-width: 1150px) {
+  .technologies__item {
+    width: 24.5%; } }
